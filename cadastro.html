@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja Voluntário - Resgate Marinho</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Estilos para a janela do formulário */
+        .formulario-container {
+            background-color: #ADD8E6; /* Azul claro para tema marinho */
+            border-radius: 15px; /* Bordas redondas */
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .formulario-container::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: 50px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-1.1 0-2 .9-2 2v2H8c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2s.9 2 2 2h2v2c0 1.1.9 2 2 2h2v2c0 1.1.9 2 2 2s2-.9 2-2v-2h2c1.1 0 2-.9 2-2v-2h2c1.1 0 2-.9 2-2s-.9-2-2-2h-2V8c0-1.1-.9-2-2-2h-2V4c0-1.1-.9-2-2-2z" fill="%2300BFFF"/></svg>'); /* Ícone de onda simples em SVG para tema marinho */
+            opacity: 0.3;
+            transform: rotate(45deg);
+        }
+        .formulario-container::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2c-1.1 0-2 .9-2 2v2H8c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2s.9 2 2 2h2v2c0 1.1.9 2 2 2h2v2c0 1.1.9 2 2 2s2-.9 2-2v-2h2c1.1 0 2-.9 2-2v-2h2c1.1 0 2-.9 2-2s-.9-2-2-2h-2V8c0-1.1-.9-2-2-2h-2V4c0-1.1-.9-2-2-2z" fill="%2300BFFF"/></svg>'); /* Ícone de onda simples em SVG para tema marinho */
+            opacity: 0.3;
+            transform: rotate(-45deg);
+        }
+        .imagem-cadastro {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 100px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .formulario {
+            position: relative;
+            z-index: 1;
+        }
+        fieldset {
+            border: 1px solid #1E90FF; /* Azul dodger para bordas */
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+        legend {
+            font-weight: bold;
+            color: #006994; /* Azul escuro para legendas */
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #00BFFF; /* Azul profundo para botões */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #009ACD; /* Azul mais escuro no hover */
+        }
+    </style>
+    <style>
+        footer {
+            font-size: 14px; /* Diminuindo a fonte do footer */
+        }
+        #contato ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            width: 100%;
+            justify-content: space-between; /* Distribui os itens uniformemente */
+        }
+        #contato li {
+            margin-right: 10px; /* Ajuste menor para evitar excesso de espaço */
+            display: flex;
+            align-items: center;
+            flex: 1; /* Permite que os itens se expandam igualmente */
+            justify-content: center; /* Centraliza o conteúdo dentro de cada li */
+        }
+        .social-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            fill: white; /* Define a cor dos ícones como branca */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Resgate Marinho</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="projetos.html">Impacto Ambiental</a>
+            <a href="cadastro.html">Seja Voluntário</a>
+        </nav>
+    </header>
+    <main>
+        <h2 style="text-align: center;">Cadastre-se para fazer parte do time!</h2>
+        <p style="text-align: center;">Estamos felizes por você se interessar em fazer parte deste time! Preencha o formulário abaixo para se tornar um voluntário da ONG Resgate Marinho. Juntos, podemos fazer a diferença na proteção dos oceanos!</p>
+        <div class="formulario-container">
+            <img src="imagens/cadastro.jpeg" alt="Imagem de cadastro marinho" class="imagem-cadastro"> <!-- Imagem alterada para tema marinho (assumindo uma imagem de oceano ou proteção marinha) -->
+            <form class="formulario" id="formVoluntario">
+                <fieldset>
+                    <legend>Dados Pessoais</legend>
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" pattern="[0-9]{2} [0-9]{4,5}-[0-9]{4}" placeholder="XX XXXXX-XXXX" required>
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" placeholder="XXX.XXX.XXX-XX" required>
+                    <label for="dataNascimento">Data de nascimento:</label>
+                    <input type="date" id="dataNascimento" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Endereço</legend>
+                    <label for="tipoLogradouro">Tipo de logradouro (Rua, Avenida, Travessa, etc.):</label>
+                    <input type="text" id="tipoLogradouro" required>
+                    <label for="nomeLogradouro">Nome do logradouro:</label>
+                    <input type="text" id="nomeLogradouro" required>
+                    <label for="numeroResidencia">Número da residência:</label>
+                    <input type="text" id="numeroResidencia" required>
+                    <label for="cep">CEP:</label>
+                    <input type="text" id="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="XXXXX-XXX" required>
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" required>
+                    <label for="estado">Estado:</label>
+                    <input type="text" id="estado" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Motivação</legend>
+                    <label for="motivo">Por que quero ser voluntário?</label>
+                    <textarea id="motivo" required></textarea>
+                </fieldset>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <!-- Mensagem de agradecimento -->
+        <div id="mensagem" style="display:none; margin-top:20px;"></div>
+        <!-- Adicionando seções para Voluntário -->
+        <section id="voluntario" style="margin-top: 40px; padding: 20px; background-color: #E0F6FF; border-radius: 10px;"> <!-- Fundo azul claro para seções -->
+            <h3>Área do Voluntário</h3>
+            <ul>
+                <li><a href="#descobrir-oportunidades">Descobrir oportunidades de voluntariado</a></li>
+                <li><a href="#candidatar-projetos">Candidatar-se a projetos</a></li>
+                <li><a href="#acompanhar-historico">Acompanhar histórico de participação</a></li>
+                <li><a href="#compartilhar-experiencias">Compartilhar experiências</a></li>
+            </ul>
+            <div id="descobrir-oportunidades" style="margin-top: 20px;">
+                <h4>Descobrir Oportunidades de Voluntariado</h4>
+                <p>Explore nossas oportunidades atuais: [Lista de oportunidades aqui - pode ser integrada com backend ou conteúdo estático].</p>
+                <!-- Adicione conteúdo dinâmico ou links aqui -->
+            </div>
+            <div id="candidatar-projetos" style="margin-top: 20px;">
+                <h4>Candidatar-se a Projetos</h4>
+                <p>Selecione um projeto e candidate-se: [Formulário ou lista de projetos aqui].</p>
+                <!-- Adicione formulário ou links para candidaturas -->
+            </div>
+            <div id="acompanhar-historico" style="margin-top: 20px;">
+                <h4>Acompanhar Histórico de Participação</h4>
+                <p>Veja seu histórico: [Dashboard ou lista de participações aqui].</p>
+                <!-- Adicione elementos para exibir histórico -->
+            </div>
+            <div id="compartilhar-experiencias" style="margin-top: 20px;">
+                <h4>Compartilhar Experiências</h4>
+                <p>Compartilhe suas experiências: [Formulário ou área para depoimentos].</p>
+                <!-- Adicione textarea ou formulário para compartilhamento -->
+            </div>
+        </section>
+        <!-- Adicionando seções para Doador/Apoiador -->
+        <section id="doador" style="margin-top: 40px; padding: 20px; background-color: #B0E0E6; border-radius: 10px;"> <!-- Fundo azul claro para seções -->
+            <h3>Área do Doador/Apoiador</h3>
+            <ul>
+                <li><a href="#conhecer-projetos">Conhecer projetos e impactos</a></li>
+                <li><a href="#realizar-doacoes">Realizar doações on-line</a></li>
+                <li><a href="#acompanhar-recursos">Acompanhar aplicação de recursos</a></li>
+                <li><a href="#relatorios-transparencia">Receber relatórios de transparência</a></li>
+            </ul>
+            <div id="conhecer-projetos" style="margin-top: 20px;">
+                <h4>Conhecer Projetos e Impactos</h4>
+                <p>Saiba mais sobre nossos projetos: <a href="projetos.html">Impacto Ambiental</a>.</p>
+                <!-- Adicione descrições ou links para projetos -->
+            </div>
+            <div id="realizar-doacoes" style="margin-top: 20px;">
+                <h4>Realizar Doações On-line</h4>
+                <form id="formDoacao">
+                    <label for="valorDoacao">Valor da doação (R$):</label>
+                    <input type="number" id="valorDoacao" min="1" required>
+                    <button type="submit">Doar</button>
+                </form>
+                <!-- Integre com gateway de pagamento -->
+            </div>
+            <div id="acompanhar-recursos" style="margin-top: 20px;">
+                <h4>Acompanhar Aplicação de Recursos</h4>
+                <p>Veja como seus recursos são aplicados: [Dashboard ou relatórios aqui].</p>
+                <!-- Adicione gráficos ou listas -->
+            </div>
+            <div id="relatorios-transparencia" style="margin-top: 20px;">
+                <h4>Receber Relatórios de Transparência</h4>
+                <p>Inscreva-se para receber relatórios: [Formulário de inscrição].</p>
+                <!-- Adicione formulário para email -->
+            </div>
+        </section>
+        <!-- Adicionando seções para Visitante -->
+        <section id="visitante" style="margin-top: 40px; padding: 20px; background-color: #87CEEB; border-radius: 10px;"> <!-- Fundo azul céu para seções -->
+            <h3>Área do Visitante</h3>
+            <ul>
+                <li><a href="#conhecer-organizacao">Conhecer a organização e seus projetos</a></li>
+                <li><a href="#informacoes-contato">Acessar informações de contato</a></li>
+                <li><a href="#galeria-atividades">Visualizar galeria de atividades</a></li>
+                <li><a href="#compartilhar-redes">Compartilhar conteúdo em redes sociais</a></li>
+            </ul>
+            <div id="conhecer-organizacao" style="margin-top: 20px;">
+                <h4>Conhecer a Organização e Seus Projetos</h4>
+                <p>Saiba mais sobre nós: <a href="index.html">Início</a> e <a href="projetos.html">Projetos</a>.</p>
+                <!-- Adicione descrições -->
+            </div>
+            <div id="informacoes-contato" style="margin-top: 20px;">
+                <h4>Acessar Informações de Contato</h4>
+                <p>Veja nossos contatos no footer abaixo.</p>
+            </div>
+            <!-- Adicionando seções para Gestão de Projetos -->
+            <section id="gestao-projetos" style="margin-top: 40px; padding: 20px; background-color: #AFEEEE; border-radius: 10px;"> <!-- Fundo azul pálido para seções -->
+                <h3>Gestão de Projetos</h3>
+                <ul>
+                    <li><a href="#cadastro-projetos">Cadastro detalhado de projetos sociais</a></li>
+                    <li><a href="#galeria-fotos-videos">Galeria de fotos e vídeos</a></li>
+                    <li><a href="#indicadores-impacto">Indicadores de impacto e resultados</a></li>
+                    <li><a href="#sistema-categorizacao">Sistema de categorização</a></li>
+                </ul>
+                <div id="cadastro-projetos" style="margin-top: 20px;">
+                    <h4>Cadastro Detalhado de Projetos Sociais</h4>
+                    <p>Cadastre novos projetos: [Formulário de cadastro de projetos aqui].</p>
+                    <!-- Adicione formulário para cadastro -->
+                </div>
+                <div id="galeria-fotos-videos" style="margin-top: 20px;">
+                    <h4>Galeria de Fotos e Vídeos</h4>
+                    <div class="galeria">
+                        <!-- Adicione imagens e vídeos -->
+                        <img src="imagens/projetomarinho.jpeg" alt="Projeto Marinho 1" style="width: 200px; margin: 10px;"> <!-- Imagem alterada para tema marinho -->
+                        <!-- Mais mídia -->
+                    </div>
+            </section>
+</body>
+</html>
